@@ -269,11 +269,7 @@ class StatefulMapController {
           throw "GeoJsonFeatureType.geometryCollection Not implemented";
       }
     });
-    if (noIsolate) {
-      await geojson.parseInMainThread(data);
-    } else {
-      await geojson.parse(data);
-    }
+    await geojson.parse(data);
   }
 
   /// Export all the map assets to a [GeoJsonFeatureCollection]
